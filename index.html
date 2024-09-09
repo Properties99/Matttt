@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mivida Park Apartment</title>
+    <link rel="stylesheet" href="property-styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeSelect = document.getElementById('type');
+            const detailsDiv = document.getElementById('details');
+            
+            const propertyDetails = {
+                'Mazzarine Apartments': 'G+5 /G+8, 141-253 From 9.5~16.7 Over 7 Years'
+            };
+
+            typeSelect.addEventListener('change', function() {
+                const selectedType = typeSelect.value;
+
+                if (selectedType) {
+                    detailsDiv.innerHTML = propertyDetails[selectedType];
+                } else {
+                    detailsDiv.innerHTML = '';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mivida Park Apartment</h1>
+        <form id="propertyForm">
+            <label for="type">Choose Type:</label>
+            <select id="type" required>
+                <option value="">--Choose a type--</option>
+                <option value="Mazzarine Apartments">Mazzarine Apartments</option>
+            </select>
+
+            <label for="details">Details:</label>
+            <div id="details"></div>
+        </form>
+    </div>
+</body>
+</html>
